@@ -53,6 +53,8 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+
+
 :root {
   /* --------------------------------------------------------------------
      1. COLOR — raw scale (edit these hex values to your brand)
@@ -69,15 +71,7 @@ h1, h2, h3, h4, h5, h6 {
   --color-neutral-800: #26262c;
   --color-neutral-900: #17171b;
   --color-neutral-950: #0c0c0e;
- 
-  --color-primary-50: #eef2ff;
-  --color-primary-100: #e0e7ff;
-  --color-primary-300: #a5b4fc;
-  --color-primary-500: #6366f1;
-  --color-primary-600: #4f46e5;
-  --color-primary-700: #4338ca;
-  --color-primary-900: #312e81;
- 
+
   --color-success-500: #22c55e;
   --color-warning-500: #f59e0b;
   --color-danger-500: #ef4444;
@@ -160,6 +154,9 @@ h1, h2, h3, h4, h5, h6 {
   --space-24: 6rem;    /* 96px */
 }
 
+
+
+/* Document & Reuse Section */
 *{
     margin: 0;
     padding: 0;
@@ -186,20 +183,84 @@ body{
     flex: 1;
     display: grid;
     grid-template-columns: minmax(150px, 200px) 1fr;
-    background-color: bisque;
+    background-color: var(--color-neutral-200);
 }
 
+button{
+  display: block;
+  border-radius: 1rem;
+  padding: .25rem .75rem;
+  color: var(--color-neutral-0);
+  background-color: var(--color-info);
+  border: none;
+  font-weight: 600;
+}
+
+#new-task-btn, #new-project-btn{
+  font-weight: 800;
+}
+
+button:hover{
+  color: var(--color-primary-300);
+}
+
+p{
+ 
+}
+
+
+
+
+/* Side Bar */
 aside{
-    background-color: #0ea5e9;
+    background-color: var(--color-info);
     grid-column: 1 / 2;
     padding: var(--space-4) var(--space-6);
     color: var(--color-neutral-0);
 }
 
+#button-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .5rem;
+  margin: 1rem 0px;
+}
+
+ul{
+  list-style: none;
+}
+
+#button-container button {
+  width: 100%;
+  text-align: left;
+}
+
+#new-project-btn{
+  border: 2px solid var(--color-neutral-0);
+}
+
+#new-project-btn:hover{
+  border-color: var(--color-neutral-900);
+  background-color: var(--color-neutral-0);
+  color: var(--color-neutral-900);
+}
+
+.project-header{
+  color: var(--color-info);
+}
 
 
+
+
+
+/* Main Section */
 main > h1{
     padding: var(--space-4) var(--space-6);
+}
+
+main h2{
+  font-size: 1.1rem;
 }
 
 #task-container{
@@ -209,31 +270,25 @@ main > h1{
     margin: 0 var(--space-6);
 }
 
-.task{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 2px solid var(--color-primary-300);
-    background-color: var(--color-neutral-0);
-    border-radius: 1rem;
-    padding: var(--space-2) var(--space-4);
+.task-card{
+  display: grid;
+  justify-items: left;
+  grid-template-columns: 3fr 2fr 2fr 1fr;
+  background-color: var(--color-neutral-0);
+  border-radius: 1rem;
+  padding: var(--space-2) var(--space-4);
+  color: var(--color-info);
 }
 
-ul{
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-    list-style: none;
-    margin-left: var(--space-2);
-    color: inherit;
-    margin-top: var(--space-2);
+#new-task-btn{
+  margin-top: var(--space-6);
 }
 
-a{
-    text-decoration: none;
-    color: inherit;
+#new-task-btn:hover{
+  background-color: var(--color-neutral-0);
+  border: 2px solid var(--color-info);
+  color: var(--color-info);
 }
 
-a:hover{
-    color: var(--color-primary-300);
-}
+
+
