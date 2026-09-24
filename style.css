@@ -1,0 +1,220 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+  /* --------------------------------------------------------------------
+     1. COLOR — raw scale (edit these hex values to your brand)
+     -------------------------------------------------------------------- */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f7f7f8;
+  --color-neutral-100: #ececee;
+  --color-neutral-200: #d9d9dd;
+  --color-neutral-300: #b7b7bf;
+  --color-neutral-400: #8f8f99;
+  --color-neutral-500: #6b6b76;
+  --color-neutral-600: #4f4f59;
+  --color-neutral-700: #3a3a42;
+  --color-neutral-800: #26262c;
+  --color-neutral-900: #17171b;
+  --color-neutral-950: #0c0c0e;
+ 
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-300: #a5b4fc;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-900: #312e81;
+ 
+  --color-success-500: #22c55e;
+  --color-warning-500: #f59e0b;
+  --color-danger-500: #ef4444;
+  --color-info-500: #0ea5e9;
+ 
+  /* --------------------------------------------------------------------
+     2. COLOR — semantic roles (reference these in components, not the
+        raw scale above, so a theme swap only touches this section)
+     -------------------------------------------------------------------- */
+  --color-bg: var(--color-neutral-0);
+  --color-bg-subtle: var(--color-neutral-50);
+  --color-surface: var(--color-neutral-0);
+  --color-surface-raised: var(--color-neutral-0);
+  --color-border: var(--color-neutral-200);
+  --color-border-strong: var(--color-neutral-300);
+ 
+  --color-text: var(--color-neutral-900);
+  --color-text-muted: var(--color-neutral-600);
+  --color-text-subtle: var(--color-neutral-500);
+  --color-text-on-primary: var(--color-neutral-0);
+  --color-text-link: var(--color-primary-600);
+ 
+  --color-accent: var(--color-primary-600);
+  --color-accent-hover: var(--color-primary-700);
+  --color-accent-muted: var(--color-primary-100);
+ 
+  --color-success: var(--color-success-500);
+  --color-warning: var(--color-warning-500);
+  --color-danger: var(--color-danger-500);
+  --color-info: var(--color-info-500);
+ 
+  --color-focus-ring: var(--color-primary-500);
+ 
+  /* --------------------------------------------------------------------
+     3. TYPOGRAPHY
+     -------------------------------------------------------------------- */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+ 
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  --font-size-5xl: 3rem;      /* 48px */
+ 
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+ 
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
+ 
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.02em;
+ 
+  /* --------------------------------------------------------------------
+     4. SPACING — 4px base scale
+     -------------------------------------------------------------------- */
+  --space-0: 0;
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+}
+
+body{
+    display: flex;
+    height: 100vh;
+}
+
+.container{
+    padding: var(--space-2);
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+#main-container{
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(240px, 280px) 1fr;
+    background-color: bisque;
+}
+
+aside{
+    background-color: #0ea5e9;
+    grid-column: 1 / 2;
+    padding: var(--space-4) var(--space-6);
+}
+
+
+
+main > h1{
+    padding: var(--space-4) var(--space-6);
+}
+
+#task-container{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin: 0 var(--space-6);
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--color-primary-300);
+    background-color: var(--color-neutral-0);
+    border-radius: 1rem;
+    padding: var(--space-2) var(--space-4);
+}
+
