@@ -185,7 +185,7 @@ body{
 #main-container{
     flex: 1;
     display: grid;
-    grid-template-columns: minmax(240px, 280px) 1fr;
+    grid-template-columns: minmax(150px, 200px) 1fr;
     background-color: bisque;
 }
 
@@ -193,6 +193,7 @@ aside{
     background-color: #0ea5e9;
     grid-column: 1 / 2;
     padding: var(--space-4) var(--space-6);
+    color: var(--color-neutral-0);
 }
 
 
@@ -218,3 +219,21 @@ main > h1{
     padding: var(--space-2) var(--space-4);
 }
 
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    list-style: none;
+    margin-left: var(--space-2);
+    color: inherit;
+    margin-top: var(--space-2);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    color: var(--color-primary-300);
+}
