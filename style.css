@@ -54,7 +54,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
 :root {
   /* --------------------------------------------------------------------
      1. COLOR — raw scale (edit these hex values to your brand)
@@ -72,6 +71,7 @@ h1, h2, h3, h4, h5, h6 {
   --color-neutral-900: #17171b;
   --color-neutral-950: #0c0c0e;
 
+  --color-yellow: yellow;
   --color-success-500: #22c55e;
   --color-warning-500: #f59e0b;
   --color-danger-500: #ef4444;
@@ -155,12 +155,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
 /* Document & Reuse Section */
 *{
     margin: 0;
     padding: 0;
     font-family: var(--font-sans);
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body{
@@ -204,10 +208,6 @@ button:hover{
   color: var(--color-primary-300);
 }
 
-p{
- 
-}
-
 
 
 
@@ -231,9 +231,12 @@ ul{
   list-style: none;
 }
 
-#button-container button {
-  width: 100%;
+.nav-button{
   text-align: left;
+}
+
+.nav-button:hover{
+  color: var(--color-yellow);
 }
 
 #new-project-btn{
@@ -273,7 +276,8 @@ main h2{
 .task-card{
   display: grid;
   justify-items: left;
-  grid-template-columns: 3fr 2fr 2fr 1fr;
+  align-items: center;
+  grid-template-columns: 3fr 2fr 2fr auto;
   background-color: var(--color-neutral-0);
   border-radius: 1rem;
   padding: var(--space-2) var(--space-4);
@@ -288,6 +292,53 @@ main h2{
   background-color: var(--color-neutral-0);
   border: 2px solid var(--color-info);
   color: var(--color-info);
+}
+
+.label-text{
+  font-weight: 600;
+}
+
+svg{
+  fill: currentColor;
+  width: 25px;
+  height: 25px;
+}
+
+
+
+
+/* Dialog */
+#project-dialog{
+  position: fixed;
+  margin: auto;
+}
+
+#project-form{
+  background-color: var(--color-neutral-0);
+  padding: 3rem 2rem;
+  width: 300px;
+  border: 2px solid var(--color-info);
+}
+
+form > h2{
+  color: var(--color-info);
+}
+
+.form-input-flex{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0px;
+}
+
+.form-button-container{
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-button:hover{
+  color: var(--color-yellow);
 }
 
 

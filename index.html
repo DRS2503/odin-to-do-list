@@ -5,24 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./scripts.js" defer></script>
+    <script type="module" src="./scripts.js"></script>
 </head>
 
 <body>
     <div id="main-container">
 
-
         <aside>
             <nav>
                 <h2>Projects</h2>
                 <ul id="button-container">
-                    <li><button>Groceries</button></li>
-                    <li><button>Full Stack</button></li>
-                    <li><button>Front end</button></li>
-                    <li><button>Network Firewall</button></li>
-                    <li><button>other</button></li>
                 </ul>
+
                 <button id="new-project-btn">New Project</button>
+
+                <dialog id="project-dialog" show>
+                    <form method="dialog" id="project-form">
+                        <h2>New Project</h2>
+                        <div class="form-input-flex">
+                            <div>
+                                <label for="title">Title</label>
+                                <input type="text" id="title" name="title">
+                            </div>
+    
+                            <div>
+                                <label for="due">Due Date</label>
+                                <input type="date" id="due" name="due">
+                            </div>
+                        </div>
+    
+                        <div class="form-button-container">
+                            <button class="form-button" type="button">Close</button>
+                            <button class="form-button" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </dialog>
+
+
             </nav>
         </aside>
 
