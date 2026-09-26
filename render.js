@@ -1,3 +1,5 @@
+export let selectedProject = 0;
+
 export function renderMain(object){
     //Set project header name
     const projectName = document.querySelector('.project-header');
@@ -70,9 +72,9 @@ export function renderNav(objectList){
     unorderedList.textContent = '';
 
     for(const project in objectList){
-        console.log('hello');
         const projectListItem = document.createElement('li');
         const projectButton = document.createElement('button');
+        projectButton.id = project;
         projectButton.classList.add('nav-button');
         projectButton.textContent = objectList[project].title;;
         unorderedList.append(projectListItem);
@@ -80,6 +82,7 @@ export function renderNav(objectList){
 
         projectButton.addEventListener('click', () => {
             const target = objectList[project];
+            selectedProject = projectButton.id;
             renderMain(target);
         })
     }

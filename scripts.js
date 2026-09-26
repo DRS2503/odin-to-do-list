@@ -1,7 +1,6 @@
-import { renderMain, renderNav } from './render.js';
+import { renderMain, renderNav, selectedProject } from './render.js';
 
 const projects = [];
-let currentProject = 0;
 
 function project(title, date){
     const taskList = []
@@ -42,7 +41,6 @@ document.getElementById('project-submit-button').addEventListener('click', () =>
     const formData = new FormData(projectForm);
     const project1 = new project(formData.get('title'), formData.get('due'));
     projects.push(project1);
-    console.log(projects);
     renderNav(projects);
     projectForm.reset();
     projectDialog.close();
@@ -66,7 +64,8 @@ document.getElementById('task-reset-button').addEventListener('click', () => {
 document.getElementById('task-submit-button').addEventListener('click', () => {
     const formData = new FormData(taskForm);
     const task1 = task(formData.get('title'), formData.get('target'), formData.get('priority'), formData.get('description'));
-    
+    projects[selectedProject].addTask(task1);
+    renderMain(projects[selectedProject]);
     taskForm.reset();
     taskDialog.close();
 })
