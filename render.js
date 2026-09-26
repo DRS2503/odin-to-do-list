@@ -67,8 +67,10 @@ export function renderMain(object){
 
 export function renderNav(objectList){
     const unorderedList = document.querySelector('ul');
+    unorderedList.textContent = '';
 
     for(const project in objectList){
+        console.log('hello');
         const projectListItem = document.createElement('li');
         const projectButton = document.createElement('button');
         projectButton.classList.add('nav-button');

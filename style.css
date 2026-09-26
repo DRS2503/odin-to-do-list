@@ -308,12 +308,13 @@ svg{
 
 
 /* Dialog */
-#project-dialog{
+#project-dialog, #task-dialog{
   position: fixed;
+  inset: 0;
   margin: auto;
 }
 
-#project-form{
+.project-form{
   background-color: var(--color-neutral-0);
   padding: 3rem 2rem;
   width: 300px;
@@ -327,8 +328,8 @@ form > h2{
 .form-input-flex{
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin: 2rem 0px;
+  gap: 1rem;
+  margin: 1.5rem 0px;
 }
 
 .form-button-container{
@@ -341,5 +342,7 @@ form > h2{
   color: var(--color-yellow);
 }
 
-
-
+form label, form input{
+  display: block;
+  width: 80%;
+}

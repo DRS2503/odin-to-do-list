@@ -1,6 +1,7 @@
 import { renderMain, renderNav } from './render.js';
 
 const projects = [];
+let currentProject = 0;
 
 function project(title, date){
     const taskList = []
@@ -27,15 +28,49 @@ function task(title, date, priority, description){
 }
 
 const projectDialog = document.getElementById('project-dialog');
-const newProjectBtn = document.getElementById('new-project-btn');
-newProjectBtn.addEventListener('click', () => {
+const projectForm = document.getElementById('project-form');
+document.getElementById('new-project-btn').addEventListener('click', () => {
     projectDialog.showModal();
 })
 
-const newTaskBtn = document.getElementById('new-task-btn');
-newTaskBtn.addEventListener('click', () => {
-    console.log('New Task Clicked');
+document.getElementById('project-reset-button').addEventListener('click', () => {
+    projectForm.reset();
+    projectDialog.close();
 })
+
+document.getElementById('project-submit-button').addEventListener('click', () => {
+    const formData = new FormData(projectForm);
+    const project1 = new project(formData.get('title'), formData.get('due'));
+    projects.push(project1);
+    console.log(projects);
+    renderNav(projects);
+    projectForm.reset();
+    projectDialog.close();
+})
+
+
+
+
+
+const taskDialog = document.querySelector('#task-dialog');
+const taskForm = document.getElementById('task-form');
+document.getElementById('new-task-btn').addEventListener('click', () => {
+    taskDialog.showModal();
+})
+
+document.getElementById('task-reset-button').addEventListener('click', () => {
+    taskForm.reset();
+    taskDialog.close();
+})
+
+document.getElementById('task-submit-button').addEventListener('click', () => {
+    const formData = new FormData(taskForm);
+    const task1 = task(formData.get('title'), formData.get('target'), formData.get('priority'), formData.get('description'));
+    
+    taskForm.reset();
+    taskDialog.close();
+})
+
 
 
 /* Place Holders */
